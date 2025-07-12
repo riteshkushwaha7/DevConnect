@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 
 app.use("/user", userRouter);                     // Signup, Login, Verify
 app.use("/api/profile", fetchProfileRouter);      // GET /user?email=
-app.use("/api/profile/update", updateRoute);      // PUT /update
+app.use("/api/profile", updateRoute);      // PUT /update
 app.use("/api/requests", requestRoute);           // GET all skill cards
 app.use("/api/swaprequests", swapRequestRoute);   // POST /send, GET /received/:userId, etc.
 
