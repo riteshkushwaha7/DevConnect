@@ -1,14 +1,20 @@
-const {getUser} = require("../utill/auth")
-async function restricToLoggedinUserOnly(req,res,next){
-    const userUid = req.cookies.uid;
-    if(!userUid) return res.redirect('/login');
+const jwt = require("jsonwebtoken")
 
-    const user = getUser(userUid);
-    if(!user) return res.redirect("/login");
-    req.user = user;
-    next();
-}
+const userModel = require("../models/models.scheme")
 
-module.exports={
-    restricToLoggedinUserOnly,
+const authmiddleware = async(req,res,next)=>{
+    const token = req.cookies.token;
+    if(!token) return res.status(401).json({message:"Unauthorised"})
+        try {
+            const decoded = jwt.verify(token,process.env.JWT_SECRET)
+            let user = await userModel.findById(decoded._id)
+            
+            if(!user){
+                 return res.status(401).json({ message: "Unauthorized" });
+            }
+            next()
+        } catch (error) {
+           return res.status(401).json({ message: "Unauthorized" });
+        }
 }
+module.exports = authmiddleware

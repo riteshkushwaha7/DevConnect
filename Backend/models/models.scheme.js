@@ -39,6 +39,7 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
+    select: false
   },
 
   profilePic: {
@@ -69,7 +70,7 @@ const userSchema = new mongoose.Schema({
   availability: {
     type: String,
     enum: ['weekdays', 'weekends'],
-    required: true,
+    default: 'weekdays'
   },
 
   description: {

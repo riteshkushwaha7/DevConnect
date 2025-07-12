@@ -1,5 +1,8 @@
-const {validationResult} = require("express-validator")
+const userModel = require("../models/models.scheme")
 const bcrypt = require("bcrypt")
+
+const {validationResult} = require("express-validator")
+
 module.exports.registerUser = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -17,7 +20,7 @@ module.exports.registerUser = async (req, res) => {
    
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new userModel({ name, phone, password: hashedPassword });
+    const newUser = new userModel({ name, email, password: hashedPassword });
     await newUser.save();
 
     const token = await newUser.generateAuthToken();
