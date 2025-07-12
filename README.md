@@ -34,9 +34,9 @@ View Current and Pending swaps
 
 Cancel/delete pending swap requests if not accepted
 
-# Team
-Optimisers
+# Team Optimisers
 Team Members
+
 Ritesh Kushwaha (Team Leader)	riteshkushwaha497@gmail.com
 
 Shubh Agrawal	shubhagrawal3890@gmail.com
