@@ -53,12 +53,12 @@ const userSchema = new mongoose.Schema({
 
   skillsOffered: {
     type: [String], 
-    enum: skillsValues,
+    enum: skillValues,
     default: [],
   },
   skillsWanted: {
     type: [String], 
-    enum: skillsValues,
+    enum: skillValues,
     default: [],
   },
 

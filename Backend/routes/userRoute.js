@@ -1,5 +1,7 @@
 const express = require("express")
 const router = express.Router()
+const userController = require('../controller/userController'); // adjust the path if your controller file is named differently
+const authmiddleware = require("../middlewares/auth") // adjust the path if your middleware file is named differently
 const {body} = require("express-validator")
 router.post("/signup",[
     body("name").isLength({min:3}).withMessage("Name should be at least 3 characters long."),

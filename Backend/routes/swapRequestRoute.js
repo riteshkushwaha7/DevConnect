@@ -18,7 +18,6 @@ router.post('/send', async (req, res) => {
   res.status(201).json({ message: 'Request sent', request });
 });
 
-
 router.get('/received/:userId', async (req, res) => {
   const { userId } = req.params;
 
@@ -39,8 +38,6 @@ router.get('/sent/:userId', async (req, res) => {
   res.status(200).json(requests);
 });
 
-
-
 router.put('/:id/status', async (req, res) => {
   const { id } = req.params;
   const { status } = req.body;
@@ -57,3 +54,5 @@ router.put('/:id/status', async (req, res) => {
   res.status(200).json({ message: 'Status updated', request });
 });
 
+// ✅ Add this:
+module.exports = router;
