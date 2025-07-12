@@ -1,10 +1,10 @@
-## DevConnect
+## SkillSwap
 # Skill Swap Platform
 
 # Problem Statement :-
 Develop a Skill Swap Platform — a mini application that enables users to list their skills and request others in return
 
-Dev Connect is a mini web application that enables users to list skills they offer, request skills in return, and connect with others for mutual learning or collaboration. Whether you're a developer, designer, or any kind of creator, Dev Connect helps you swap skills and grow together.
+SkillSwap is a mini web application that enables users to list skills they offer, request skills in return, and connect with others for mutual learning or collaboration. Whether you're a developer, designer, or any kind of creator, Dev Connect helps you swap skills and grow together.
 
 # Features
 👤 User Profile
